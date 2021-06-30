@@ -1,6 +1,8 @@
 import scrapy
 
 reviews_url = 'https://www.amazon.com/product-reviews/{}'
+
+# Can change ASIN number based on product
 asin_list = ['B08G9J44ZN']
 
 
@@ -21,7 +23,7 @@ class ReviewsSpider(scrapy.Spider):
                 'review': review.xpath('normalize-space(.//*[@data-hook="review-body"])').get(),
             }
             yield item
-            
+
         next_page = response.xpath('//a[text()="Next page"]/@href').get()
         if next_page:
             yield scrapy.Request(response.urljoin(next_page))
