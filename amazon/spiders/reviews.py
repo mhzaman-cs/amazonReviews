@@ -1,4 +1,5 @@
 import scrapy
+from scrapy.utils.response import open_in_browser
 
 reviews_url = 'https://www.amazon.com/product-reviews/{}'
 
@@ -16,6 +17,7 @@ class ReviewsSpider(scrapy.Spider):
 
     def parse(self, response):
         for review in response.css('[data-hook="review"]'):
+            open_in_browser(response)
             item = {
                 'name': review.css('.a-profile-name ::text').get(),
                 'stars': review.css('[data-hook="review-star-rating"] ::text').get(),

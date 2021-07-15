@@ -6,6 +6,7 @@ SPIDER_MODULES = ['amazon.spiders']
 NEWSPIDER_MODULE = 'amazon.spiders'
 ROBOTSTXT_OBEY = False
 AUTOTHROTTLE_ENABLED = True
+DOWNLOAD_DELAY = 2
 DEFAULT_REQUEST_HEADERS = sh.get_dict(
 
     '''
