@@ -40,7 +40,24 @@ With pip:
 2. Open the folder in a code editor of your choice, eg. Atom, Visual Studio Code, etc.
 3. Go to reviews.py in the following manner, amazonReviews-master -> amazon -> spiders -> reviews.py
 4. Change the values in the asin_list to the values you would like to scrape. If you would like to scrape reviews for more that 1 value add it to the list. Besure to remove the placeholder value of 'B08G9J44ZN'
+5. Then run the following command in the command line, replacing FILE_NAME with the name of the file that you would like to save it as, and replacing tfile with the type of the file, eg. csv, sql, xml, the file will be saved in the project folder:
+```
+> scrapy crawl reviews -o FILE_NAME.tfile
+```
+
+## Demo
+[<img src="Demo.gif" width="100%"/>](https://github.com/MuhammadZ985/amazonReviews)
+
+## Built With
+
+* [python3](https://www.python.org/downloads/) - The language used
+* [scrapy](https://scrapy.org/) - First Dependency
+* [scraper-helper](https://pypi.org/project/scraper-helper/) - Secondary Dependency
 
 ## Authors
 
-* **Muhammad Zaman** - *Initial work* - [PurpleBooth](https://github.com/MuhammadZ985)
+* **Muhammad Zaman** - *Sole Creator* - [Muhammad Zaman](https://github.com/MuhammadZ985)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
